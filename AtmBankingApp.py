@@ -35,12 +35,19 @@ def main():
     accountObj = accounts[0]
     while True:
         # Reading id from user
-        id = int(input("\nPlease enter account pin: "))
+        try:
+            id = int(input("\nPlease enter account pin: "))
+
+        except ValueError:
+            print("Oops! Invalid input.Try again")
+            continue
 
         # Loop till id is valid
-        while id != 4545:
+        if id != 4545:
+            print("Oops! Invalid pin.Try again")
+            continue
 
-            id = int(input("\nInvalid Id.. Re-enter correct pin: "))
+            # id = int(input("\nInvalid Id.. Re-enter correct pin: "))
 
         # Iterating over account session
         while True:
